@@ -9,6 +9,8 @@ import configureStore from './configureStore';
 import App from '../src/App';
 
 export default ({clientStats}) => async (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+
     const store = await configureStore(req, res);
     if (!store) return; // no store means redirect was already served
 

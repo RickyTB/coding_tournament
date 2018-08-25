@@ -1,5 +1,7 @@
 'use strict';
 
+require("babel-core/register");
+require("babel-polyfill");
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
