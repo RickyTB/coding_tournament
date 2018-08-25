@@ -9,6 +9,7 @@
     "mixins": [
       "loopback/common/mixins",
       "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
       "../common/mixins",
       "./mixins"
     ]
@@ -35,7 +36,12 @@
     "dataSource": "db",
     "public": false
   },
-  "Message": {
-    "dataSource": null
+  "report": {
+    "dataSource": "db",
+    "public": true
+  },
+  "category": {
+    "dataSource": "db",
+    "public": true
   }
 }

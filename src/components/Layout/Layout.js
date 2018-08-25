@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
 
-import Toolbar from '../Navigation/Toolbar/Toolbar';
 import classes from './Layout.scss';
+import Logo from "../Navigation/Logo/Logo";
 
 const layout = (props) => {
     return (
         <Fragment>
-            <Toolbar/>
+            <Logo className={classes.Logo}/>
             <div className={classes.Layout}>
                 <main className={classes.Main}>
                     {props.children}

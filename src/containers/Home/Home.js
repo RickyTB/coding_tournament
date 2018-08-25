@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const home = props => (
-    <div>
-        <h1>Holip</h1>
-    </div>
-);
+import classes from './Home.scss';
+import Map from "../../components/Map/Map";
+import {Quito} from "../../utils/locations";
 
-export default home;
+class Home extends Component {
+
+    handleMapReady = () => {
+        console.log('Map loaded');
+    };
+
+    render() {
+        return (
+            <div className={classes.Home}>
+                <Map location={Quito} onMapReady={this.handleMapReady()}/>
+            </div>
+        );
+    }
+}
+
+export default Home;

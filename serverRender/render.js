@@ -32,7 +32,7 @@ export default ({clientStats}) => async (req, res, next) => {
           <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
           <meta name="viewport" content="width=device-width">
           <meta name="theme-color" content="#FFFFFF">
-          <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet"> 
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
           ${helmet.title.toString()}
           ${helmet.meta.toString()}
           ${helmet.link.toString()}
