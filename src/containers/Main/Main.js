@@ -8,6 +8,7 @@ import FAB from "../../components/UI/FAB/FAB";
 import * as actions from '../../store/actions';
 import * as routeTypes from '../../store/router/routeTypes';
 import Switcher from "../../components/Navigation/Switcher/Switcher";
+import {getPage} from "../../store/selectors";
 
 class Main extends Component {
 
@@ -19,17 +20,26 @@ class Main extends Component {
         this.props.changePage(routeTypes.REPORT);
     };
 
+    handleMessage = (state) => {
+        this.setState({...state});
+    };
+
     render() {
         return (
             <div className={classes.Main}>
-                <Map location={Quito} onMapReady={this.handleMapReady}/>
+                <Map location={Quito} onMapReady={this.handleMapReady} page={this.props.page}/>
                 <FAB title="Reportar" onClick={this.handlePlusButton}>
                     <i className="fa fa-plus"/>
                 </FAB>
-                <Switcher/>
+                <Switcher mainListener={this.handleMessage}/>
             </div>
         );
     }
 }
 
-export default connect(null, {changePage: actions.changePage})(Main);
+const mapStateToProps = state => {
+    return {
+        page: getPage(state)
+    };
+};
+export default connect(mapStateToProps, {changePage: actions.changePage})(Main);
