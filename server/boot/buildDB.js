@@ -44,6 +44,4 @@ const build = async (app) => {
         ]);
 
     }
-    const categories2 = await Category.find();
-    console.log(categories2);
 };
