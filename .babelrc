@@ -1,0 +1,28 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions"
+          ],
+          "node": "6.9.0",
+          "shippedProposals": true,
+          "forceAllTransforms": true
+        },
+        "useBuiltIns": true
+      }
+    ],
+    "react",
+    "stage-2"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}

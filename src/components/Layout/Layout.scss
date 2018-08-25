@@ -1,0 +1,16 @@
+.Layout {
+  display: flex;
+  flex-flow: row wrap;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  > * {
+    flex: 1;
+  }
+
+  .Main {
+    flex: 3;
+    position: relative;
+  }
+}
