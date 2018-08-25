@@ -23,6 +23,7 @@ class Map extends Component {
                        onReady={this.mapReady}
                        disableDefaultUI={true}
                        initialCenter={this.props.location}>
+                {this.props.children}
             </GoogleMap>
         );
     }

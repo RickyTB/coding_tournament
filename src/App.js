@@ -1,20 +1,20 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-import './scss/main.scss'
+import './scss/main.global.scss'
 import Layout from "./components/Layout/Layout";
-import Switcher from "./components/Navigation/Switcher/Switcher";
 import SEO from "./components/SEO/SEO";
+import Main from "./containers/Main/Main";
 
 const app = () => (
-    <div>
+    <Fragment>
         <SEO schema="WebPage"
              title="Dericktum"
              path="/"
              contentType="website"/>
         <Layout>
-            <Switcher/>
+            <Main/>
         </Layout>
-    </div>
+    </Fragment>
 );
 
 export default app;

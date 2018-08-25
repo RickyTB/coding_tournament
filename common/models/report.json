@@ -7,19 +7,15 @@
     "validateUpsert": true
   },
   "mixins": {
-    "TimeStamp" : {
-      "createdAt" : "createdOn",
-      "updatedAt" : "updatedOn",
-      "required" : false,
+    "TimeStamp": {
+      "createdAt": "createdOn",
+      "updatedAt": "updatedOn",
+      "required": false,
       "validateUpsert": true,
       "silenceWarnings": true
     }
   },
   "properties": {
-    "type": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "string",
       "required": true
@@ -34,7 +30,52 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "category": {
+      "type": "hasOne",
+      "model": "category",
+      "foreignKey": "categoryId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "imageUpload": {
+      "type": "embedsOne",
+      "model": "Upload",
+      "property": "image",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "createReport": {
+      "accepts": [
+        {
+          "arg": "ctx",
+          "type": "object",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "The result of the creation"
+        }
+      ],
+      "description": "Creates a new report using form data.",
+      "http": [
+        {
+          "path": "/",
+          "verb": "post"
+        }
+      ]
+    }
+  }
 }

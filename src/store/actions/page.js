@@ -1,0 +1,1 @@
+export const changePage = (page, payload) => ({type: page, payload});

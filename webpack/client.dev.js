@@ -31,36 +31,75 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.s?css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                modules: true,
-                                importLoaders: 1,
-                                localIdentName: '[name]__[local]__[hash:base64:5]'
-                            }
-                        },
-                        {
-                            loader: "postcss-loader",
-                            options: {
-                                ident: 'postcss',
-                                plugins: () => [
-                                    autoprefixer({
-                                        browsers: [
-                                            "> 1%",
-                                            "last 2 versions"
-                                        ]
-                                    })
-                                ]
-                            }
-                        },
-                        {loader: "sass-loader"}
-                    ]
-                })
-            }
+                test: /\.global\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /^((?!\.global).)*\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: true,
+                            importLoaders: 1,
+                            localIdentName: '[name]__[local]__[hash:base64:5]'
+                        }
+                    }
+                ]
+            },
+            // SASS support - compile all .global.scss files and pipe it to style.css
+            {
+                test: /\.global\.(scss|sass)$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            },
+            // SASS support - compile all other .scss files and pipe it to style.css
+            {
+                test: /^((?!\.global).)*\.(scss|sass)$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: true,
+                            importLoaders: 1,
+                            localIdentName: '[name]__[local]__[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            },
         ]
     },
     resolve: {

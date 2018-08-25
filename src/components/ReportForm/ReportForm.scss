@@ -1,0 +1,29 @@
+@import "../../scss/variables";
+
+.ReportForm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 460px;
+  max-height: 100%;
+  overflow-y: scroll;
+  background-color: #d70000;
+  color: $white;
+}
+
+.Container {
+  position: fixed;
+  min-width: 460px;
+  right: 0;
+  height: 100%;
+  z-index: 1300;
+}
+
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}

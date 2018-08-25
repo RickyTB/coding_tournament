@@ -43,5 +43,9 @@
   "category": {
     "dataSource": "db",
     "public": true
+  },
+  "Upload": {
+    "dataSource": "db",
+    "public": false
   }
 }

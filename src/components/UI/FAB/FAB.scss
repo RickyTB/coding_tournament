@@ -1,0 +1,20 @@
+@import '../../../scss/variables';
+
+.FAB {
+  background-color: $primary;
+  border-radius: 50%;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 1040;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: 4px 4px 8px -1px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: $container-max-widths [md]) {
+  .FAB {
+    right: 30px;
+    bottom: 30px;
+  }
+}

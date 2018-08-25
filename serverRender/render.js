@@ -35,6 +35,7 @@ export default ({clientStats}) => async (req, res, next) => {
           <meta name="viewport" content="width=device-width">
           <meta name="theme-color" content="#FFFFFF">
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
           ${helmet.title.toString()}
           ${helmet.meta.toString()}
           ${helmet.link.toString()}

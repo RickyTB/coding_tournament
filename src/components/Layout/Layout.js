@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {Notifications} from "redux-notification";
 
 import classes from './Layout.scss';
 import Logo from "../Navigation/Logo/Logo";
@@ -12,6 +13,7 @@ const layout = (props) => {
                     {props.children}
                 </main>
             </div>
+            <Notifications/>
         </Fragment>
     );
 };

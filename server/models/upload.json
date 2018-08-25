@@ -1,0 +1,37 @@
+{
+  "name": "Upload",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false,
+      "defaultFn": "uuid",
+      "mongodb": {
+        "dataType": "uuid"
+      }
+    },
+    "property": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "filename": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import NotFound from "../../../containers/NotFound/NotFound";
 import {getPage} from "../../../store/selectors";
 import * as routeTypes from "../../../store/router/routeTypes";
-import Home from "../../../containers/Home/Home";
+import ReportForm from "../../ReportForm/ReportForm";
+import NotFound from "../../../containers/NotFound/NotFound";
 
 const Components = {
-    [routeTypes.HOME]: Home
+    [routeTypes.REPORT]: ReportForm
 };
 
 const Switcher = ({page}) => {
